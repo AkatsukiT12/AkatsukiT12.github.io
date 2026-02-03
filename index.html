@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akatsuki Engineering</title>
+    <style>
+        :root {
+            --bg-color: #0f1014;
+            --card-bg: #1a1c23;
+            --text-main: #e2e8f0;
+            --text-muted: #94a3b8;
+            --accent-red: #ef4444; 
+            --accent-glow: rgba(239, 68, 68, 0.2);
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Hero Section with Red Gradient */
+        header {
+            background: linear-gradient(180deg, rgba(20,0,0,1) 0%, var(--bg-color) 100%);
+            text-align: center;
+            padding: 80px 20px;
+            border-bottom: 1px solid #333;
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 20px;
+            /* Simple pulse animation for the logo */
+            animation: pulse 3s infinite;
+        }
+
+        h1 { font-size: 3rem; margin: 0; letter-spacing: 2px; }
+        h3 { color: var(--accent-red); font-weight: 400; margin-top: 10px; }
+        .tagline { color: var(--text-muted); max-width: 600px; margin: 20px auto; font-style: italic;}
+
+        /* Grid Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section-title {
+            border-left: 5px solid var(--accent-red);
+            padding-left: 15px;
+            margin-bottom: 30px;
+            font-size: 1.5rem;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        /* Project Cards */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 25px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px var(--accent-glow);
+            border-color: var(--accent-red);
+        }
+
+        .card h4 { margin-top: 0; color: var(--accent-red); font-size: 1.2rem; }
+        .card p { color: var(--text-muted); font-size: 0.9rem; }
+        
+        .tech-stack {
+            margin-top: 15px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: #333;
+            color: #fff;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 50px;
+            border-top: 1px solid #333;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="https://via.placeholder.com/150/8B0000/FFFFFF?text=Cloud" alt="Akatsuki Logo" class="logo">
+        <h1>暁 Akatsuki T12</h1>
+        <h3>Biomedical Engineering & Software Solutions</h3>
+        <p class="tagline">
+            "A group of Biomechanical Engineering students came together for a course project—and decided to have some fun along the way!"
+        </p>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title">Current Operations</h2>
+        
+        <div class="project-grid">
+            
+            <a href="https://github.com/AkatsukiT12/akatsuki-ctg-monitor" class="card">
+                <h4>☁️ Akatsuki CTG Monitor</h4>
+                <p>A high-performance, real-time Cardiotocography analysis tool wrapped in an immersive Akatsuki-themed interface.</p>
+                <div class="tech-stack">
+                    <span class="badge">React</span>
+                    <span class="badge">FastAPI</span>
+                    <span class="badge">Python</span>
+                </div>
+            </a>
+
+            <a href="https://github.com/AkatsukiT12/smart-incubator" class="card">
+                <h4>👶 Smart Incubator System</h4>
+                <p>Real-time vital signs monitoring for neonatal care with flutter-based visualization.</p>
+                <div class="tech-stack">
+                    <span class="badge">Flutter</span>
+                    <span class="badge">IoT</span>
+                    <span class="badge">Arduino</span>
+                </div>
+            </a>
+
+            <a href="#" class="card">
+                <h4>⚡ Upcoming Project</h4>
+                <p>More revolutionary biomedical engineering tools are currently in development.</p>
+                <div class="tech-stack">
+                    <span class="badge">Loading...</span>
+                </div>
+            </a>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Akatsuki T12 Organization. Built for Science & Chaos.</p>
+    </footer>
+
+</body>
+</html>
