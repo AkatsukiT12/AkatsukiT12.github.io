@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Akatsuki Engineering</title>
+    
+    <link rel="icon" type="image/png" href="akatsuki_logo.png">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
         :root {
             --bg-color: #0f1014;
@@ -41,12 +45,10 @@
         .logo {
             width: 140px;
             height: 140px;
-            border-radius: 50%;
-            border: 2px solid var(--accent-red);
-            padding: 5px;
-            box-shadow: 0 0 20px var(--accent-glow);
+            /* Removed the border (red circle) and padding */
             margin-bottom: 20px;
-            object-fit: cover;
+            object-fit: contain; /* Ensures the logo shape isn't cut off */
+            filter: drop-shadow(0 0 15px rgba(239, 68, 68, 0.4)); /* Adds a subtle glow instead of a hard circle */
         }
 
         h1 { font-size: 3.5rem; margin: 0; letter-spacing: 2px; text-transform: uppercase; }
