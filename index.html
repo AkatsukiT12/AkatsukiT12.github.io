@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akatsuki Engineering</title>
-    
+    <title>The Team | Akatsuki T12</title>
     <link rel="icon" type="image/png" href="akatsuki_logo.png">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
@@ -17,7 +15,6 @@
             --text-muted: #94a3b8;
             --accent-red: #ef4444; 
             --accent-glow: rgba(239, 68, 68, 0.2);
-            --border-color: #333;
         }
 
         body {
@@ -33,249 +30,185 @@
         header {
             background: linear-gradient(180deg, rgba(20,0,0,1) 0%, var(--bg-color) 100%);
             text-align: center;
-            padding: 80px 20px 60px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .logo-container {
-            position: relative;
-            display: inline-block;
+            padding: 80px 20px 40px;
         }
 
         .logo {
-            width: 140px;
-            height: 140px;
-            /* Removed the border (red circle) and padding */
+            width: 120px;
+            height: 120px;
             margin-bottom: 20px;
-            object-fit: contain; /* Ensures the logo shape isn't cut off */
-            filter: drop-shadow(0 0 15px rgba(239, 68, 68, 0.4)); /* Adds a subtle glow instead of a hard circle */
+            object-fit: contain;
+            filter: drop-shadow(0 0 15px rgba(239, 68, 68, 0.4));
         }
 
-        h1 { font-size: 3.5rem; margin: 0; letter-spacing: 2px; text-transform: uppercase; }
-        h3 { color: var(--accent-red); font-weight: 400; margin-top: 10px; font-size: 1.5rem; }
-        .tagline { color: var(--text-muted); max-width: 600px; margin: 25px auto; font-style: italic; font-size: 1.1rem; }
+        h1 { font-size: 3rem; margin: 0; text-transform: uppercase; letter-spacing: 2px; }
+        .subtitle { color: var(--accent-red); font-size: 1.2rem; margin-top: 10px; }
+        .bio { max-width: 700px; margin: 30px auto; color: var(--text-muted); font-style: italic; }
 
-        /* Grid Layout */
+        /* Team Grid */
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 60px 20px;
+            padding: 40px 20px;
         }
 
-        .section-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 40px;
-        }
-
-        .section-title {
-            font-size: 1.8rem;
-            margin: 0;
-            padding-right: 15px;
-        }
-
-        .divider {
-            height: 2px;
-            background: var(--accent-red);
-            flex-grow: 1;
-            opacity: 0.5;
-        }
-
-        .project-grid {
+        .team-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjusted for 5 members */
+            gap: 30px;
+            margin-top: 40px;
         }
 
-        /* Project Cards */
-        .card {
+        /* Member Cards */
+        .member-card {
             background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 30px;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            color: inherit;
-            display: flex;
-            flex-direction: column;
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 30px 20px;
+            text-align: center;
+            transition: transform 0.3s ease, border-color 0.3s;
             position: relative;
             overflow: hidden;
-        }
-
-        /* Red strip on hover */
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background: var(--accent-red);
-            transform: scaleY(0);
-            transition: transform 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-7px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.5);
-            border-color: #444;
-        }
-
-        .card:hover::before {
-            transform: scaleY(1);
-        }
-
-        .card-header {
             display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .member-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-red);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .avatar {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            border: 3px solid var(--accent-red);
+            padding: 3px;
             margin-bottom: 15px;
+            object-fit: cover;
+            background-color: #000;
         }
 
-        .card h4 { 
-            margin: 0; 
-            color: #fff; 
-            font-size: 1.4rem; 
+        .member-name { font-size: 1.4rem; margin: 10px 0 5px; color: #fff; }
+        .member-role { color: var(--accent-red); font-weight: bold; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; }
+        .member-quote { color: var(--text-muted); font-size: 0.9rem; margin-top: 15px; font-style: italic; flex-grow: 1; }
+
+        .social-links {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
         }
 
-        .repo-icon {
+        .social-links a {
             color: var(--text-muted);
-            font-size: 1.2rem;
+            font-size: 1.3rem;
+            transition: color 0.3s;
         }
 
-        .card p { 
-            color: var(--text-muted); 
-            font-size: 0.95rem; 
-            flex-grow: 1;
-            margin-bottom: 20px;
+        .social-links a:hover { color: var(--accent-red); }
+
+        /* Bottom Link back to GitHub */
+        .back-link {
+            text-align: center;
+            margin-top: 60px;
+            padding: 20px;
         }
         
-        .tech-stack {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-            margin-top: auto;
+        .btn-github {
+            display: inline-block;
+            background: #333;
+            color: #fff;
+            padding: 10px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: background 0.3s;
+            border: 1px solid #444;
         }
 
-        .badge {
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--accent-red);
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            border: 1px solid rgba(239, 68, 68, 0.3);
-        }
+        .btn-github:hover { background: var(--accent-red); border-color: var(--accent-red); }
 
-        footer {
-            text-align: center;
-            padding: 40px;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-top: 80px;
-            border-top: 1px solid var(--border-color);
-        }
-
-        /* Mobile Adjustments */
-        @media (max-width: 600px) {
-            h1 { font-size: 2.5rem; }
-            .card { padding: 20px; }
-        }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo-container">
-            <img src="akatsuki_logo.png" alt="Akatsuki Logo" class="logo">
-        </div>
-        <h1>暁 Akatsuki T12</h1>
-        <h3>Biomedical Engineering & Software Solutions</h3>
-        <p class="tagline">
-            "A group of Biomechanical Engineering students came together for a course project—and decided to have some fun along the way!"
+        <img src="akatsuki_logo.png" alt="Akatsuki Logo" class="logo">
+        <h1>The Organization</h1>
+        <div class="subtitle">Biomedical Engineers | Cairo University</div>
+        <p class="bio">
+            "A group of Biomechanical Engineering students who came together for course tasks and decided to turn it into a movement."
         </p>
     </header>
 
     <div class="container">
-        
-        <div class="section-header">
-            <h2 class="section-title">Mission Archives</h2>
-            <div class="divider"></div>
-        </div>
-        
-        <div class="project-grid">
+        <div class="team-grid">
             
-            <a href="https://github.com/AkatsukiT12/CTG_Monitoring" class="card">
-                <div class="card-header">
-                    <h4>☁️ CTG Monitor</h4>
-                    <i class="fa-brands fa-github repo-icon"></i>
+            <div class="member-card">
+                <img src="https://github.com/Ziad-Ashraf-Abdu.png" alt="Ziad" class="avatar">
+                <h3 class="member-name">Ziad Ashraf</h3>
+                <div class="member-role">Team Lead & Software</div>
+                <p class="member-quote">"True art is an explosion... of code."</p>
+                <div class="social-links">
+                    <a href="https://github.com/Ziad-Ashraf-Abdu" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/ziad-mohamed-2a956b282" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
-                <p>High-performance Cardiotocography analysis tool with real-time FHR/UC simulation and NICHD-compliant diagnostics.</p>
-                <div class="tech-stack">
-                    <span class="badge">React</span>
-                    <span class="badge">FastAPI</span>
-                    <span class="badge">Python</span>
-                </div>
-            </a>
+            </div>
 
-            <a href="https://github.com/AkatsukiT12/Incubator" class="card">
-                <div class="card-header">
-                    <h4>👶 Smart Incubator</h4>
-                    <i class="fa-brands fa-github repo-icon"></i>
+            <div class="member-card">
+                <img src="https://github.com/Rah00m.png" alt="Rahma" class="avatar">
+                <h3 class="member-name">Rahma Fathy</h3>
+                <div class="member-role">Biomedical Engineer</div>
+                <p class="member-quote">"Fixing bugs is my ninja way."</p>
+                <div class="social-links">
+                    <a href="https://github.com/Rah00m" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/rahmafathy105" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
-                <p>Neonatal care system monitoring temperature, humidity, and vitals with remote control capabilities.</p>
-                <div class="tech-stack">
-                    <span class="badge">Flutter</span>
-                    <span class="badge">IoT</span>
-                    <span class="badge">Arduino</span>
-                </div>
-            </a>
+            </div>
 
-            <a href="https://github.com/AkatsukiT12/Infusion-pump" class="card">
-                <div class="card-header">
-                    <h4>💉 Infusion Pump</h4>
-                    <i class="fa-brands fa-github repo-icon"></i>
+            <div class="member-card">
+                <img src="https://github.com/mariamsherif04.png" alt="Mariam" class="avatar">
+                <h3 class="member-name">Mariam Sherif</h3>
+                <div class="member-role">Biomedical Engineer</div>
+                <p class="member-quote">"I want to protect... the connection."</p>
+                <div class="social-links">
+                    <a href="https://github.com/mariamsherif04" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/mariam-sherif-76b984326" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
-                <p>Precise automated drug delivery system simulation with flow rate control and safety alarm protocols.</p>
-                <div class="tech-stack">
-                    <span class="badge">Embedded C</span>
-                    <span class="badge">Python</span>
-                    <span class="badge">Control Systems</span>
-                </div>
-            </a>
+            </div>
 
-            <a href="https://github.com/AkatsukiT12/Hemodialysis" class="card">
-                <div class="card-header">
-                    <h4>🩸 Hemodialysis</h4>
-                    <i class="fa-brands fa-github repo-icon"></i>
+            <div class="member-card">
+                <img src="https://github.com/sarah012-210.png" alt="Sarah" class="avatar">
+                <h3 class="member-name">Sarah Sameh</h3>
+                <div class="member-role">Biomedical Engineer</div>
+                <p class="member-quote">"This world shall know... pain-free healthcare."</p>
+                <div class="social-links">
+                    <a href="https://github.com/sarah012-210" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/sarah-sameh-8b4349290" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
-                <p>Simulation of extracorporeal blood purification, monitoring dialysate flow, pressure, and conductivity.</p>
-                <div class="tech-stack">
-                    <span class="badge">Fluid Dynamics</span>
-                    <span class="badge">Sensors</span>
-                    <span class="badge">C++</span>
-                </div>
-            </a>
+            </div>
 
-            <a href="https://github.com/AkatsukiT12/Heart-Lung_Machine" class="card">
-                <div class="card-header">
-                    <h4>🫀 Heart-Lung Machine</h4>
-                    <i class="fa-brands fa-github repo-icon"></i>
+            <div class="member-card">
+                <img src="https://github.com/alhussien-ayman.png" alt="Alhussien" class="avatar">
+                <h3 class="member-name">Alhussien Ayman</h3>
+                <div class="member-role">Biomedical Engineer</div>
+                <p class="member-quote">"We are the ones who will bring peace... to the hardware."</p>
+                <div class="social-links">
+                    <a href="https://github.com/alhussien-ayman" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a href="http://www.linkedin.com/in/alhussien-ayman-488336249" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
-                <p>Cardiopulmonary bypass simulation managing oxygenation and circulation during cardiac surgery.</p>
-                <div class="tech-stack">
-                    <span class="badge">Biomedical</span>
-                    <span class="badge">System Design</span>
-                    <span class="badge">Python</span>
-                </div>
-            </a>
+            </div>
 
+        </div>
+
+        <div class="back-link">
+            <a href="https://github.com/AkatsukiT12" class="btn-github">
+                <i class="fa-brands fa-github"></i> View Mission Archives
+            </a>
         </div>
     </div>
-
-    <footer>
-        <p>&copy; 2026 Akatsuki T12 Organization. <br> <span style="font-size: 0.8em; color: #666;">"We are the ones who will bring peace... through engineering."</span></p>
-    </footer>
 
 </body>
 </html>
